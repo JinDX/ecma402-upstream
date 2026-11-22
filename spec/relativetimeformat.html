@@ -280,8 +280,9 @@
         1. Else,
           1. Let _tense_ be *"future"*.
         1. Let _tensePatterns_ be _patterns_.[[&lt;_tense_>]].
-        1. Let _formattedValue_ be PartitionNumberPattern(_relativeTimeFormat_.[[NumberFormat]], ℝ(_value_)).
-        1. Let _pluralCategory_ be ResolvePlural(_relativeTimeFormat_.[[PluralRules]], _value_).[[PluralCategory]].
+        1. Let _magnitude_ be abs(ℝ(_value_)).
+        1. Let _formattedValue_ be PartitionNumberPattern(_relativeTimeFormat_.[[NumberFormat]], _magnitude_).
+        1. Let _pluralCategory_ be ResolvePlural(_relativeTimeFormat_.[[PluralRules]], _magnitude_).[[PluralCategory]].
         1. Let _pattern_ be _tensePatterns_.[[&lt;_pluralCategory_>]].
         1. Return MakePartsList(_pattern_, _unit_, _formattedValue_).
       </emu-alg>
